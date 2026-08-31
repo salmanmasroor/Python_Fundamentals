@@ -49,3 +49,17 @@ print(type(a))
 b = 12
 c = float(b)
 print(c)
+
+# diffrent varible but assign same for immutable 
+a = 10
+b = 10
+
+print(a is b)
+
+"""
+        ┌─────────┐
+a ─────►│         │
+        │   10    │
+b ─────►│         │
+        └─────────┘
+"""
