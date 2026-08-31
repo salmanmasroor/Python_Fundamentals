@@ -52,7 +52,7 @@ print(id(y))
 
 
 x = 11
-print(y)                       # because integer is immutable. now they have diffent box with differnt value 
+print(y)                       # now another memory cell create which contain 11 and x pointin it.so x and y has differnt memory.
 
 #if mutable data type then
 
