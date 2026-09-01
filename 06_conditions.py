@@ -30,3 +30,11 @@ elif marks_obtained >= 10:
     print("well")
 else:
     print("need to improve")
+
+
+# pass is a Python keyword that does nothing just used for place holder when nothing to pass.
+abc = 12
+if abc > 15:
+    print("ok")
+else:
+    pass
