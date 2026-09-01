@@ -40,3 +40,33 @@ reverse loop
 
 for i in range(10,0,-1):
     print(i)
+
+"""
+While Loop: A while loop keeps running while a condition is true.
+"""
+i = 0
+
+while i <=5:
+    print(i)
+    i+=1
+
+"""
+break: break immediately terminates the loop.
+continue: continue skips the current iteration and moves to the next one. 
+"""
+for i in range(1,101):
+    if i%2 == 0:
+        continue
+    elif i == 85:
+        break
+    else:
+        print(i)
+
+"""
+Use when you need the actual values , not required indexes
+"""
+
+list1 = [1,23,12,23]
+
+for i in list1:
+    print(i)
