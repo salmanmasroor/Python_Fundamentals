@@ -72,10 +72,70 @@ def count_frequency_char_v2(character):
         char_dict[i] = count
 
     return char_dict
-            
 
+def two_sum(num_list,target):
+    for i in range(len(num_list)):
+        for j in range(i+1,len(num_list)):
+            if num_list[i] + num_list[j] == target:
+                return (num_list[i],num_list[j])
+
+#remove duplicates
+def remove_duplicate_v1(num_list):
+    return list(set(num_list))
+
+def remove_duplicate_v2(num_list):
+    temp = []
+    for i in num_list:
+        if i not in temp:
+            temp.append(i)
+    return temp
+
+#word frequency
+def word_frequency(word):
+    word_frequency = {}
+    word_list = word.split()
+    for i in word_list:
+        count = 0
+        if i in word_frequency:
+            continue
+        for j in word_list:
+            if i == j:
+                count += 1
+        word_frequency[i] = count
+    return word_frequency
+
+def word_frequency_v2(word):
+    temp = ""
+    word_list = []
+    frequency = {}
+    for i in word:
+        if i == " ":
+            word_list.append(temp)
+            temp = ""
+            continue
+        temp += i 
+    word_list.append(temp)
+    for i in word_list:
+        count = 0
+        if i in frequency:
+            continue
+        for j in word_list:
+            if i == j:
+                count += 1
+
+        frequency[i] = count
+    return frequency
+
+# find second largest
+
+
+        
 
 if __name__ == "__main__":
     print(student_mark_analyzer("Ali",[78, 85, 92, 66, 88]))    
     print(count_frequency_char_v2("programming"))
     print(missing_number([2,4,7,15,10,23])) # without zero logic
+    print(two_sum([2,3,1,2],4))
+    print(remove_duplicate_v2([122,1,2,2,3,122,3,22,12,3,4,4]))
+    print(word_frequency_v2("python is easy and python is powerful"))
+    
