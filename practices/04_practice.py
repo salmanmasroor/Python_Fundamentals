@@ -127,7 +127,19 @@ def word_frequency_v2(word):
     return frequency
 
 # find second largest
-
+def second_largest(num_list):
+    max = num_list[0]
+    for i in num_list:
+        if max < i:
+            max = i
+    temp = max
+    for i in num_list:
+        if max == i:
+            continue
+        if temp < max + i:
+            temp = max + i
+    temp = temp - max
+    return temp
 
         
 
@@ -138,4 +150,5 @@ if __name__ == "__main__":
     print(two_sum([2,3,1,2],4))
     print(remove_duplicate_v2([122,1,2,2,3,122,3,22,12,3,4,4]))
     print(word_frequency_v2("python is easy and python is powerful"))
+    print(second_largest([14,12,23,12,23,11,2,17,3,2,20]))
     
