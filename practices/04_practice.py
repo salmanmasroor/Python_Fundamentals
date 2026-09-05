@@ -24,24 +24,58 @@ def student_mark_analyzer(name,marks_list):
     } 
 
 #Find Missing Number
-#def missing_number(num_list):
+def missing_number(num_list): # without zero
+    temp = 0
+    missing_list = []
+    num_list = sorted(num_list)
+    for i in num_list:
+        if i - temp == 1:
+            temp = i
+        else:    
+            for row in range(temp+1,i):
+                print(row)
+                missing_list.append(row)
+            temp = i
+    return missing_list
+
+
+
 
 # Count Character Frequency
+def count_frequency_char_v1(character):
+    char_dict = {}
 
-def count_frequency_char(character):
-    char_dict = {"p",2}
-    for i in range(0,len(character)):
-        print(char_dict.keys())
-        """
-        if i in char_list[0].keys():
-            print("--")
+    for i in range(len(character)):
+        count = 1
+
+        if character[i] in char_dict:
             continue
-        """
-        print(character[i])
+
         for j in range(i+1,len(character)):
-            print(character[j])
+            if character[i] == character[j]:
+                count += 1
+
+        char_dict[character[i]] = count
+
+    return char_dict
+
+def count_frequency_char_v2(character):
+    char_dict = {}
+
+    for i in character:
+        count = 0
+        if i in char_dict:
+            continue
+        for j in character:
+            if i == j:
+                count += 1
+        char_dict[i] = count
+
+    return char_dict
+            
 
 
 if __name__ == "__main__":
     print(student_mark_analyzer("Ali",[78, 85, 92, 66, 88]))    
-    count_frequency_char("programming")
+    print(count_frequency_char_v2("programming"))
+    print(missing_number([2,4,7,15,10,23])) # without zero logic
