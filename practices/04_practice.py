@@ -141,7 +141,24 @@ def second_largest(num_list):
     temp = temp - max
     return temp
 
-        
+def check_anagram(first_word,second_word):
+    string = ""
+    if len(first_word) == len(second_word):
+        for i in first_word:
+            if i in string:
+                continue
+            for j in second_word:
+                if i.lower() == j.lower():
+                    string += i.lower()
+                
+        if len(string) == len(first_word):
+            print("Anagram")
+        else:
+            print("Not Anagram")         
+    else:
+        return "Not Anagram"
+
+     
 
 if __name__ == "__main__":
     print(student_mark_analyzer("Ali",[78, 85, 92, 66, 88]))    
@@ -151,4 +168,7 @@ if __name__ == "__main__":
     print(remove_duplicate_v2([122,1,2,2,3,122,3,22,12,3,4,4]))
     print(word_frequency_v2("python is easy and python is powerful"))
     print(second_largest([14,12,23,12,23,11,2,17,3,2,20]))
-    
+    check_anagram("Listen", "Silent")
+    a = [12,10,10]
+    a.pop(10)
+    print(a)
