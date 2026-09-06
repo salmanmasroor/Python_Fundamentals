@@ -9,6 +9,8 @@ Address = """XYZ,
 Lahore"""
 print(name,city,Address)
 
+# formatting in string
+print(f"he live {city}")
 #Access Characters — Indexing
 print(name[0])
 print(city[-1])
