@@ -158,9 +158,26 @@ def check_anagram(first_word,second_word):
     else:
         return "Not Anagram"
 
-     
+# Find Unique Elements
+def unique_elements(num):
+    unique_list = []
+    for i in range(len(num)):
+        if i in unique_list:
+            continue
+        count = 0
+        for j in range(0,len(num)):
+            if num[i] == num[j]:
+                count += 1
+
+        print(count)
+        if count == 1:
+            unique_list.append(num[i])
+
+    return unique_list
+
 
 if __name__ == "__main__":
+    """
     print(student_mark_analyzer("Ali",[78, 85, 92, 66, 88]))    
     print(count_frequency_char_v2("programming"))
     print(missing_number([2,4,7,15,10,23])) # without zero logic
@@ -170,5 +187,7 @@ if __name__ == "__main__":
     print(second_largest([14,12,23,12,23,11,2,17,3,2,20]))
     check_anagram("Listen", "Silent")
     a = [12,10,10]
-    a.pop(10)
-    print(a)
+    #a.pop(10)
+    #print(a)
+    """
+    print(unique_elements([12,2,1,2,11,2,3,2,12]))
