@@ -125,17 +125,6 @@ def sum_of_n(num):
 
 
 if __name__ == "__main__":
-    """
-    result = sum_of_nth(881188) 
-    print(result)
-    table(12)
-    leap_year(2024)
-    print(is_positive(11))
-    result = is_even(24)
-    print(result)
-    fact = factorial(5)
-    print(fact)
-    """
     print(count_digits(12433242343))
 
     print(sum_of_n(10))
