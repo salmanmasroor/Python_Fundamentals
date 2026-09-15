@@ -87,6 +87,15 @@ Code inside this block runs when the file is executed directly.
 It does not run when the file is imported as a module.
 """
 
+
+"""
+
+“Why does a __pycache__ folder appear after I import/use a module?”:
+
+Python/CPython creates a .pyc file inside __pycache__.
+CPython converts your .py code into bytecode and saves that bytecode as a .pyc file.
+Next time you import the module, Python can use the cached bytecode instead of doing all the compilation work again.
+"""
 if __name__ == "__main__":
     print(mul(11,5))
     
