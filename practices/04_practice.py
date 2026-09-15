@@ -175,6 +175,20 @@ def unique_elements(num):
 
     return unique_list
 
+#First Non-Repeating Character
+def non_repeat_character(char):
+    count = 0
+    for i in char:
+        for j in char:
+            if i == j:
+                count +=1
+
+        if count == 1:
+            return i
+        else:
+            count = 0
+
+
 
 if __name__ == "__main__":
     """
@@ -191,3 +205,5 @@ if __name__ == "__main__":
     #print(a)
     """
     print(unique_elements([12,2,1,2,11,2,3,2,12]))
+    print(non_repeat_character("aabbcdde"))
+    
