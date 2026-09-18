@@ -1,4 +1,8 @@
 # Student Grade Systen
+from importlib import import_module   #(used beacuse do not want to change file name)
+
+practice = import_module("01_practice")
+count_digits = practice.count_digits
 
 def grade_system(num):
     grade = None
@@ -93,7 +97,39 @@ def happy_number(num):
         else:
             sq = temp
             print(temp)
-            
+
+#Automorphic Number
+def automorphic_number(num):
+    sq = num ** 2
+    i = 0
+    temp = ""
+    length = count_digits(num)
+    while i < length:
+        temp += str(sq%10)
+        sq = sq // 10
+        i += 1
+
+    temp = int(temp[::-1])
+
+    if num == temp:
+        return "automorphic_number"
+    else:
+        return "not automorphic_number"
+
+#hashed number
+
+def hashed_number(num):
+    digit = num
+    temp = 0
+    while num > 0:
+        temp += num % 10
+        num //= 10
+    print(temp, digit)
+    result = digit % temp
+    if result == 0:
+        return "Hashed Number"
+    else:
+        return "Not Hashed Number"
 
 if __name__ == "__main__":
     print(grade_system(80))
@@ -101,4 +137,6 @@ if __name__ == "__main__":
     print(reverse_word_v1("Python is very easy"))
     print(reverse_word_v2("Python is very easy"))
     print(reverse_word_v3("Python is very easy"))
-    print(happy_number(7))
+    print(happy_number(10))
+    print(automorphic_number(625))
+    print(hashed_number(18))
