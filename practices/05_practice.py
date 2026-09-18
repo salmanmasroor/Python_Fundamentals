@@ -77,10 +77,28 @@ def reverse_word_v3(word):
     
 
 
-    return word
+#Happy Number
+
+def happy_number(num): 
+    sq = num**2
+    for i in range(12):
+        temp = 0
+        while sq > 0:
+            temp += ((sq % 10)**2)
+            sq = sq // 10 
+
+        if temp == 1:
+            return "Happy Number"
+
+        else:
+            sq = temp
+            print(temp)
+            
+
 if __name__ == "__main__":
     print(grade_system(80))
     print(most_frequent_value([10, 20,20, 10, 30, 20, 10, 40,20,0,1,20]))
     print(reverse_word_v1("Python is very easy"))
     print(reverse_word_v2("Python is very easy"))
     print(reverse_word_v3("Python is very easy"))
+    print(happy_number(7))
